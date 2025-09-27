@@ -31,7 +31,7 @@
 # s = "aabbcdeff"
 # r = ""
 # for i,chr in enumerate(s):        
-#     if((i != 0) and (chr not in s[i+1:len(s)]) and (chr not in s[0:i])):        
+#     if((i != 0) and (chr not in s[i+1:]) and (chr not in s[0:i])):        
 #         r=chr
 #         break
 # print(r)        

@@ -208,3 +208,43 @@
 ### __repr__ Official/unambiguous string representation (for developers/debugging).
 ### __str__ Informal/readable string representation (for users).
 ### For example. print(obj) __str__ (if exists case), __repr__ (to handle Non exists case)
+
+#### 9. Custom Iterator
+### An iterator is an object in Python that allows you to traverse through all the elements of a collection (like a list, tuple, or dictionary) one by one, without needing to know the internal structure.
+### Think of it like a bookmark: it remembers your current position while looping.
+### You can get the next item using next().
+### Iterators implement two methods:
+### __iter__() → returns the iterator object itself.
+### __next__() → returns the next item. Raises StopIteration when there are no items left.
+
+class MyRange:
+    def __init__(self, start, end):
+        self.current = start
+        self.end = end
+    def __iter__(self):
+        return self
+    def __next__(self):
+        if(self.current >= self.end):
+            raise StopIteration #REMEMBER raise keyword
+        value = self.current
+        self.current += 1
+        return value
+    
+### case 1: check above iterator with loop    
+# num = MyRange(1,5)
+# for n in num:
+#     print(n)
+
+### case 2: check above iterator with next
+### Before execute below example please comment above loop otherwise point will not be reset position.
+
+# print(next(num))
+# print(next(num))
+# print(next(num))
+
+###Converting Iterable to Iterator
+m_list = [1,5,8,9]
+it = iter(m_list)
+print(next(it))
+print(next(it))
+print(next(it))
