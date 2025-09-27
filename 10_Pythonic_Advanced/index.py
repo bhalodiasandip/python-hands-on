@@ -103,13 +103,13 @@
 
 ### 4.3 namedtuple
 # from collections import namedtuple
-# Point = namedtuple("Point", ['x', 'y'])
+# MyPointClass = namedtuple("Point", ['x', 'y'])
 # ## field_names (str or list)
 # ## The names of the attributes.
 # ## Can be given as:
 # ## A space/comma-separated string: "x y" or "x, y"
 # ## A list of strings: ["x", "y"]
-# A = Point(2.5, 9.6)
+# A = MyPointClass(2.5, 9.6)
 # print(A.x, A.y)
 
 ### 4.4 deque
@@ -217,18 +217,18 @@
 ### __iter__() → returns the iterator object itself.
 ### __next__() → returns the next item. Raises StopIteration when there are no items left.
 
-class MyRange:
-    def __init__(self, start, end):
-        self.current = start
-        self.end = end
-    def __iter__(self):
-        return self
-    def __next__(self):
-        if(self.current >= self.end):
-            raise StopIteration #REMEMBER raise keyword
-        value = self.current
-        self.current += 1
-        return value
+# class MyRange:
+#     def __init__(self, start, end):
+#         self.current = start
+#         self.end = end
+#     def __iter__(self):
+#         return self
+#     def __next__(self):
+#         if(self.current >= self.end):
+#             raise StopIteration #REMEMBER raise keyword
+#         value = self.current
+#         self.current += 1
+#         return value
     
 ### case 1: check above iterator with loop    
 # num = MyRange(1,5)
@@ -243,8 +243,8 @@ class MyRange:
 # print(next(num))
 
 ###Converting Iterable to Iterator
-m_list = [1,5,8,9]
-it = iter(m_list)
-print(next(it))
-print(next(it))
-print(next(it))
+# m_list = [1,5,8,9]
+# it = iter(m_list)
+# print(next(it))
+# print(next(it))
+# print(next(it))
