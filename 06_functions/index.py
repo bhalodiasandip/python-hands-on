@@ -97,27 +97,20 @@ from math import sqrt
 # Decorator = A function that takes another function and adds extra behavior without modifying it.
 
 # def my_decorator(func):
-#     def my_wrapper():
-#         print("Before Function")
-#         func()
-#         print("After function")
+#     def my_wrapper(*args):
+#         print("Before call")
+#         func(*args)
+#         print("After call")
 #     return my_wrapper
 
 # @my_decorator
-# def say_hello():
-#     print("Hello")
-# say_hello()
+# def greet(name):
+#     print(f"Hello {name}")
+# greet("sandip")
 
-# @my_decorator
-# def say_world():
-#     print("World")
-# say_world()    
-## Before Function
-## Hello
-## After function
-## Before Function
-## World
-## After function
+# Before call
+# Hello sandip
+# After call
 
 ####
 # Used to modify variables in the enclosing (but not global) scope.
